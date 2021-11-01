@@ -24,6 +24,9 @@ export default function PredictHeartFailure(props) {
         }
         return 1?value === props.yes:0;
     }
+    function roundToX(num, X) {    
+        return +(Math.round(num + "e+"+X)  + "e-"+X);
+    }
     const makePrediction = () => {
         var input_xs;
         input_xs = tf.tensor2d([
@@ -38,7 +41,7 @@ export default function PredictHeartFailure(props) {
         console.log(input_xs);
         var output = model.predict(input_xs)
         var outputData = output.dataSync();
-        document.getElementById("answer").value = Number(outputData)
+        document.getElementById("answer").value = "You have "+ String(roundToX(Number(outputData)*100,2)) +" % chances of heart failure"
 
 
     }
@@ -161,7 +164,7 @@ export default function PredictHeartFailure(props) {
             </div>
             <div className="btn-primary" onClick ={makePrediction}>Click</div>
             <div>
-                <input type = "email" id = "answer"/>
+                <textarea id = "answer"/>
             </div>
         </>
     )
