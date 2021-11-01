@@ -1,8 +1,47 @@
 import React from 'react'
+import * as tf from '@tensorflow/tfjs';
 
-import 
+import '@tensorflow/tfjs-backend-webgl';
 
 export default function PredictHeartFailure(props) {
+    var model;
+    tf.setBackend('webgl');
+    async function loadModel(){
+        model =  await tf.loadLayersModel('https://raw.githubusercontent.com/TanmayDaga/Ai/main/models/model.json')
+        console.log("model loaded success")
+        console.log(model)
+    }
+    loadModel();
+   
+  
+
+    const loadValues = (value) => {
+        if (value === props.male){
+            return 1;
+        }
+        if (value === props.female){
+            return 0;
+        }
+        return 1?value === props.yes:0;
+    }
+    const makePrediction = () => {
+        var input_xs;
+        input_xs = tf.tensor2d([
+            [Number(props.age),
+             loadValues(props.anaemia),
+              loadValues(props.diabetes),
+              loadValues(props.bp),
+              loadValues(props.gender),
+              loadValues(props.smoking)
+            ]
+        ])
+        console.log(input_xs);
+        var output = model.predict(input_xs)
+        var outputData = output.dataSync();
+        document.getElementById("answer").value = Number(outputData)
+
+
+    }
 
     const handleGender = (event) => {
         event === props.male ? props.setGender(props.yes) : props.setGender(props.no)
@@ -27,9 +66,7 @@ export default function PredictHeartFailure(props) {
     const handleDiabetes = (event) => {
         event === props.yes?props.setDiabetes(props.yes):props.setDiabetes(props.no)
     }
-    const myFunc = () =>{
-        
-    }
+   
     return (
         <>
             {/* Gender */}
@@ -122,7 +159,10 @@ export default function PredictHeartFailure(props) {
                     <input type="radio" name="DiabetesRadioButton" id="noDiabetesRadioButton" defaultChecked={true} onClick={() => handleDiabetes(props.yes)}></input>
                 </div>
             </div>
-            <div className="btn-primary" onClick ={myFunc}>Click</div>
+            <div className="btn-primary" onClick ={makePrediction}>Click</div>
+            <div>
+                <input type = "email" id = "answer"/>
+            </div>
         </>
     )
 }

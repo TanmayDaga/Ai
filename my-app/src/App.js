@@ -1,7 +1,7 @@
 
 import './App.css';
-import NavBar from "./my-components/NavBar.js";
-import PredictHeartFailure from './my-components/PredictHeartFailure';
+import NavBar from "./components/NavBar.js";
+import PredictHeartFailure from './components/PredictHeartFailure';
 import { useState } from "react";
 
 let no = "NO";
@@ -18,6 +18,8 @@ function App() {
   const [somkingState, setSomkingState] = useState(no);
   const [bpState, setBpState] = useState(no);
   const [ageState, setAgeState] = useState(45);
+  
+  
   return (
     <>
       <NavBar/>
