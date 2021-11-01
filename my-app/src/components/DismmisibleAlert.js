@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function DismmisibleAlert() {
+export default function DismmisibleAlert(props) {
     return (
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            A simple danger alert—check it out!
-        </div>
+        <>
+            {props.state === true ?
+                (<div className= {`alert alert-${props.color} alert-dismissible fade show`} role="alert">
+                    {props.message}
+                </div> ): ""}
+
+        </>
     )
 }
