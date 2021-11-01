@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import 
 
 export default function PredictHeartFailure(props) {
 
@@ -26,6 +26,9 @@ export default function PredictHeartFailure(props) {
     }
     const handleDiabetes = (event) => {
         event === props.yes?props.setDiabetes(props.yes):props.setDiabetes(props.no)
+    }
+    const myFunc = () =>{
+        
     }
     return (
         <>
@@ -119,6 +122,7 @@ export default function PredictHeartFailure(props) {
                     <input type="radio" name="DiabetesRadioButton" id="noDiabetesRadioButton" defaultChecked={true} onClick={() => handleDiabetes(props.yes)}></input>
                 </div>
             </div>
+            <div className="btn-primary" onClick ={myFunc}>Click</div>
         </>
     )
 }
