@@ -129,10 +129,10 @@
                 "config": {
                     "name": "RMSprop",
                     "learning_rate": 0.0010000000474974513,
-                    "decay": 0.0,
+                    "decay": 0,
                     "rho": 0.8999999761581421,
-                    "momentum": 0.0,
-                    "epsilon": 1e-07,
+                    "momentum": 0,
+                    "epsilon": 1e-7,
                     "centered": false
                 }
             }
