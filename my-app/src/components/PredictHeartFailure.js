@@ -10,6 +10,7 @@ export default function PredictHeartFailure(props) {
     async function loadModel() {
         model = await tf.loadLayersModel('https://raw.githubusercontent.com/TanmayDaga/Ai/main/models/model.json')
         console.log("model loaded success")
+        console.log(model);
     }
     loadModel();
 
