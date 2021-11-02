@@ -1,0 +1,19 @@
+{
+    "diabetes":{
+        "Prevent":"https://www.hsph.harvard.edu/nutritionsource/disease-prevention/diabetes-prevention/preventing-diabetes-full-story/",
+        "Deal":"https://www.cdc.gov/diabetes/managing/diabetes-distress/ten-tips-coping-diabetes-distress.html"
+    },
+    "smoking":{
+        "Stop":"https://www.nhs.uk/live-well/quit-smoking/10-self-help-tips-to-stop-smoking/",
+        "Consequences":"https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm"
+    },
+    "anaemia":{
+        "what":"https://www.who.int/health-topics/anaemia#tab=tab_1",
+        "symptoms":"https://www.who.int/health-topics/anaemia#tab=tab_2",
+        "preventions":"https://www.nhm.gov.in/images/pdf/programmes/child-health/guidelines/Control-of-Iron-Deficiency-Anaemia.pdf"
+    },
+    "bloodPressure":{
+        "symptomsAndCauses":"https://www.cdc.gov/bloodpressure/about.htm",
+        "preventions":"https://www.health.harvard.edu/staying-healthy/6-simple-tips-to-reduce-your-blood-pressure"
+    }
+}
