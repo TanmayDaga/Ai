@@ -8,7 +8,7 @@ export default function Footer() {
                 © 2021 Copyright:
                 <a class="text-reset fw-bold" href="https://tanmaydaga.github.io/Ai/">Heart Failure Analytics</a>
                 <div>
-            <a class="nav-link"  className = "text-light" href="https://github.com/TanmayDaga/Ai">Get Code </a>
+            
             </div>
             </div>
             

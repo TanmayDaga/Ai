@@ -13,7 +13,7 @@ export default function Links() {
                     Diabetes
                 </summary>
                 <a className="link-success"href={externalLinks.diabetes.Prevent}>How to prevent Diabetes</a><br />
-                <a className="link-success"className="link-success" href={externalLinks.diabetes.Deal}>How to deal with Diabetes</a>
+                <a className="link-success" href={externalLinks.diabetes.Deal}>How to deal with Diabetes</a>
             </details>
             <details>
                 <summary>

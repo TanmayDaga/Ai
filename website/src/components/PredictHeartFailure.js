@@ -29,7 +29,7 @@ export default function PredictHeartFailure(props) {
         return +(Math.round(num + "e+" + X) + "e-" + X);
     }
     function makePrediction() {
-        if (props.age >= 100 || props.age <= 0 || props.age==="") {
+        if (props.age >= 100 || props.age <= 0 || props.age === "") {
             props.setAlertMessage("Invalid Age. Age should be between 0 to 100");
             props.setAlertColor("danger")
             props.setAlertState(true);
@@ -49,11 +49,11 @@ export default function PredictHeartFailure(props) {
                 loadValues(props.smoking)
                 ]
             ])
-        
 
-        var output = model.predict(input_xs)
-        var outputData = output.dataSync();
-        document.getElementById("answer").value = "You have " + String(roundToX(Number(outputData) * 100, 2)) + " % chances of heart failure"
+
+            var output = model.predict(input_xs)
+            var outputData = output.dataSync();
+            document.getElementById("answer").value = "You have " + String(roundToX(Number(outputData) * 100, 2)) + " % chances of heart failure"
 
         }
     }
@@ -83,8 +83,8 @@ export default function PredictHeartFailure(props) {
     }
 
     return (
-        <>
-            <div className="container-fluid py-3 containerMain">
+        <>{props.analyticsState ?
+            (<div className="container-fluid py-3 containerMain">
                 <h3>Analytics</h3>
 
                 {/* Gender */}
@@ -191,7 +191,7 @@ export default function PredictHeartFailure(props) {
                 </div>
 
                 <div>
-                    <input type="text" id="answer" readOnly className="form-control-plaintext text-sm" style={{ width: "100%",wordBreak:'break-word',wordWrap:'break-word'}} />
+                    <input type="text" id="answer" readOnly className="form-control-plaintext text-sm" style={{ width: "100%", wordBreak: 'break-word', wordWrap: 'break-word' }} />
                     <div className="clickButton my-1 btn btn-primary pull-right" onClick={makePrediction} >Get Results</div>
 
                 </div>
@@ -199,8 +199,8 @@ export default function PredictHeartFailure(props) {
                     Disclaimer: The model purely based on this
                     <a className="link-secondary" style={{ textDecoration: "none" }} href="https://www.kaggle.com/andrewmvd/heart-failure-clinical-data"> data</a>
                 </div>
-            </div>
-
+            </div>) : ""
+        }
         </>
     )
 }

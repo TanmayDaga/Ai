@@ -1,6 +1,9 @@
 .containerMainFooter{
 
-  margin-top: 30px;
+  min-height: 73px;
   width: 100%;
 
+  margin-top: 10%;
+  bottom: 0;
+  position: relative;
 }

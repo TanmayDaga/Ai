@@ -6,6 +6,7 @@ import { useState } from "react";
 import DismmisibleAlert from './components/DismmisibleAlert';
 import Links from './components/Links';
 import Footer from './components/Footer';
+import Graphs from './components/Graphs'
 
 let no = "NO";
 let yes = "YES";
@@ -28,14 +29,16 @@ function App() {
   const [alertState, setAlertState] = useState(false);
   const [alertMessage,setAlertMessage] = useState("Invalid age");
   const [alertColor,setAlertColor] = useState(colors.green);
+  const [analyticsState, setAnalyticsState] = useState(true);
+  const [graphsState, setGraphsState] = useState(false)
 
   return (
       <>
       
-      <NavBar/>
+      <NavBar setAnalyticsState = {setAnalyticsState} setGraphsState = {setGraphsState}/>
       <DismmisibleAlert state = {alertState} message = {alertMessage} color = {alertColor}/>
    
-      <PredictHeartFailure yes = {yes} no = {no} colors = {colors}
+      <PredictHeartFailure yes = {yes} no = {no} colors = {colors} analyticsState = {analyticsState}
                            male = {genderMale} female = {genderFemale}
                            diabetes = {diabetesState} setDiabetes = {setDiabetesState}
                            anaemia = {anaemiaState} setAnaemia = {setAnaemiaState} 
@@ -46,6 +49,7 @@ function App() {
                            alertState = {alertState} alertMessage = {alertMessage}
                            setAlertState = {setAlertState} setAlertMessage = {setAlertMessage} setAlertColor = {setAlertColor}
                            />
+      <Graphs graphsState = {graphsState}/>                           
       <Links/>
       <footer>
         <Footer/>
